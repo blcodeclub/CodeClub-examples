@@ -19,14 +19,8 @@ class Box {
         }
 
         void update() {
-            if(this->rectangle.x >= (800 - this->rectangle.w) | this->rectangle.x < 0) {
-                this->velocity.x = -(this->velocity.x);
-                this->rectangle.x += this->velocity.x;
-            }
-            if(this->rectangle.y > (600 - this->rectangle.h) | this->rectangle.y < 0) {
-                this->velocity.y = -(this->velocity.y);
-                this->rectangle.y += this->velocity.y;
-            }
+            if(this->rectangle.x > (800 - this->rectangle.w) | this->rectangle.x < 0) { this->velocity.x = -(this->velocity.x); }
+            if(this->rectangle.y > (600 - this->rectangle.h) | this->rectangle.y < 0) { this->velocity.y = -(this->velocity.y); }
             this->rectangle.x += this->velocity.x;
             this->rectangle.y += this->velocity.y;
         }
