@@ -42,15 +42,17 @@ int main( int argc, char * argv[]) {
     //make a Box to draw.
     std::vector<Box*> boxes;
     boxes.push_back(new Box({50,  50,  75, 75}, {1, 0}, {0x00, 0x00, 0x00, 0xff}));
-    boxes.push_back(new Box({100, 100, 75, 75}, {-1, 0}, {0xff, 0x00, 0x00, 0xff}));
+    boxes.push_back(new Box({100, 100, 75, 75}, {1, 0}, {0xff, 0x00, 0x00, 0xff}));
     boxes.push_back(new Box({150, 150, 75, 75}, {1, 0}, {0x00, 0xff, 0x00, 0xff}));
-    boxes.push_back(new Box({200, 200, 75, 75}, {-1, 0}, {0xff, 0xff, 0x00, 0xff}));
+    boxes.push_back(new Box({200, 200, 75, 75}, {1, 0}, {0xff, 0xff, 0x00, 0xff}));
     boxes.push_back(new Box({250, 250, 75, 75}, {1, 0}, {0x00, 0x00, 0xff, 0xff}));
-    boxes.push_back(new Box({300, 300, 75, 75}, {-1, 0}, {0xff, 0x00, 0xff, 0xff}));
+    boxes.push_back(new Box({300, 300, 75, 75}, {1, 0}, {0xff, 0x00, 0xff, 0xff}));
     boxes.push_back(new Box({350, 350, 75, 75}, {1, 0}, {0x00, 0xff, 0xff, 0xff}));
-    boxes.push_back(new Box({400, 400, 75, 75}, {-1, 0}, {0xff, 0xff, 0xff, 0xff}));
+    boxes.push_back(new Box({400, 400, 75, 75}, {1, 0}, {0xff, 0xff, 0xff, 0xff}));
 
-    int i;
+    //int i;
+
+    //Make an event handler
     SDL_Event e;
 
     while(true) {
@@ -58,7 +60,7 @@ int main( int argc, char * argv[]) {
         SDL_SetRenderDrawColor(renderer, 0x99, 0x99, 0x99, 0xff);
         SDL_RenderClear(renderer);
 
-        for(i = 0; i < boxes.size(); i++) {
+        for(int i = 0; i < boxes.size(); i++) {
             boxes[i]->draw(renderer);
             boxes[i]->update();
         }
